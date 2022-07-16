@@ -1,15 +1,19 @@
 import {useCallback, useState} from "react";
 import Button from "../../shared/button";
 import InputText from "../../shared/inputText";
+import {useDispatch} from "react-redux";
 import styles from "./search.module.scss";
+import {setInputStoreVal} from "../../store/slice/searchSlice";
 const Search = () => {
   const [inputVal, setInputVal] = useState("");
+  const dispatch = useDispatch();
   const onChange = useCallback((e) => {
     setInputVal(e.target.value);
   }, []);
   const onClick = () => {
     //fire api
     console.log("button clicked", inputVal);
+    dispatch(setInputStoreVal(inputVal));
   };
   return (
     <div className={styles.container}>
