@@ -7,11 +7,15 @@ const Search = () => {
   const onChange = useCallback((e) => {
     setInputVal(e.target.value);
   }, []);
+  const onClick = () => {
+    //fire api
+    console.log("button clicked", inputVal);
+  };
   return (
     <div className={styles.container}>
       <InputText value={inputVal} onChange={onChange} />
       <div className={styles.button}>
-        <Button>Search</Button>
+        <Button onClick={onClick}>Search</Button>
       </div>
     </div>
   );
