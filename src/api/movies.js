@@ -1,6 +1,6 @@
 import clientAxios from "./axios/clientAxios";
 
-export const fetchMovies = async (options = {}) => {
+export const getMovies = async (options = {}) => {
   const {page, searchinput = "DEFAULT"} = options;
   const apikey = `${process.env.REACT_APP_API_KEY}`;
 
