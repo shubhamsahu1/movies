@@ -14,7 +14,7 @@ const Search = () => {
     //fire api
     console.log("button clicked", inputVal);
     dispatch(setInputStoreVal(inputVal));
-    dispatch(fetchUserById({page: 1, searchinput: inputVal}));
+    dispatch(fetchUserById());
   };
   return (
     <div className={styles.container}>

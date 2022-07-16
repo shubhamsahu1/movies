@@ -1,11 +1,19 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {getMovies} from "../../api/movies";
 
-const initialState = {value: "", result: {}, page: 0};
+const initialState = {
+  value: "",
+  result: {},
+  page: 1,
+};
 export const fetchUserById = createAsyncThunk(
   "search/fetchByName",
-  async (options = {}, searchinput) => {
-    const response = await getMovies(options);
+  async (_, thunkAPI) => {
+    let state = thunkAPI.getState();
+    let {page, value} = state.search;
+
+    const response = await getMovies({page, searchinput: value});
+
     return response.data;
   }
 );
@@ -22,6 +30,7 @@ const counterSlice = createSlice({
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(fetchUserById.fulfilled, (state, action) => {
       // Add user to the state array
+
       state.result = action.payload;
     });
   },
