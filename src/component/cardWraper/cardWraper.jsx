@@ -7,7 +7,10 @@ const CardWraper = (props) => {
   console.log(searchData);
   return (
     <div className={styles.container}>
-      <MovieCard />
+      {searchData.Search &&
+        searchData.Search.map((e) => {
+          return <MovieCard key={e.imdbID} data={e} />;
+        })}
     </div>
   );
 };
