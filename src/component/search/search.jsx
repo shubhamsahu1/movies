@@ -12,7 +12,6 @@ const Search = () => {
   }, []);
   const onClick = () => {
     //fire api
-    console.log("button clicked", inputVal);
     dispatch(setInputStoreVal(inputVal));
     dispatch(fetchMovies());
   };

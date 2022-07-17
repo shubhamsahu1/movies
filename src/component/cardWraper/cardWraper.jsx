@@ -1,11 +1,11 @@
 import {useSelector} from "react-redux";
 import Pagination from "../../shared/pagination/pagination";
-import {searchResult} from "../../store/slice/searchSlice";
+import {searchResult, searchPage} from "../../store/slice/searchSlice";
 import MovieCard from "../movieCard/movieCard";
 import styles from "./cardWraper.module.scss";
 const CardWraper = (props) => {
   const searchData = useSelector(searchResult);
-  console.log(searchData);
+  const currentPage = useSelector(searchPage);
   return (
     <>
       {searchData.Search && (
@@ -16,7 +16,7 @@ const CardWraper = (props) => {
                 return <MovieCard key={e.imdbID} data={e} />;
               })}
           </div>
-          <Pagination />
+          <Pagination currentPage={currentPage} />
         </div>
       )}
     </>
