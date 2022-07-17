@@ -4,6 +4,7 @@ import clientAxios from "./clientAxios";
 const setUpInterceptor = (store) => {
   const {dispatch} = store;
   const handleError = async (error) => {
+    dispatch(removeLoader());
     return Promise.reject(error);
   };
 
