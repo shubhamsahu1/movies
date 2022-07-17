@@ -6,7 +6,7 @@ const initialState = {
   result: {},
   page: 1,
 };
-export const fetchUserById = createAsyncThunk(
+export const fetchMovies = createAsyncThunk(
   "search/fetchByName",
   async (_, thunkAPI) => {
     let state = thunkAPI.getState();
@@ -25,10 +25,13 @@ const counterSlice = createSlice({
     setInputStoreVal(state, action) {
       state.value = action.payload;
     },
+    setPage(state, action) {
+      state.page = action.payload;
+    },
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
-    builder.addCase(fetchUserById.fulfilled, (state, action) => {
+    builder.addCase(fetchMovies.fulfilled, (state, action) => {
       // Add user to the state array
 
       state.result = action.payload;

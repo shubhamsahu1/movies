@@ -3,7 +3,7 @@ import Button from "../../shared/button";
 import InputText from "../../shared/inputText";
 import {useDispatch} from "react-redux";
 import styles from "./search.module.scss";
-import {setInputStoreVal, fetchUserById} from "../../store/slice/searchSlice";
+import {setInputStoreVal, fetchMovies} from "../../store/slice/searchSlice";
 const Search = () => {
   const [inputVal, setInputVal] = useState("");
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Search = () => {
     //fire api
     console.log("button clicked", inputVal);
     dispatch(setInputStoreVal(inputVal));
-    dispatch(fetchUserById());
+    dispatch(fetchMovies());
   };
   return (
     <div className={styles.container}>

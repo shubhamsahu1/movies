@@ -1,0 +1,10 @@
+@import "src/styles/style";
+
+.pageButton {
+  margin: 10px;
+  width: 45px;
+  border-radius: 5px;
+}
+.selected {
+  background-color: $grey4;
+}
