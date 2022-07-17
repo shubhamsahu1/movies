@@ -11,6 +11,11 @@ const setUpInterceptor = (store) => {
   clientAxios.interceptors.request.use(async (config) => {
     /* your logic here */
     dispatch(setLoader());
+    config.params = {
+      ...config.params,
+      apikey: `${process.env.REACT_APP_API_KEY}`,
+    };
+
     return config;
   });
 
