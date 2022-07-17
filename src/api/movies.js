@@ -11,5 +11,6 @@ export const getMovies = async (options = {}) => {
   const params = {apikey, page, s: searchinput};
 
   /** http call */
+
   return await clientAxios.get(url, {params});
 };

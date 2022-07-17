@@ -12,6 +12,7 @@ const Search = () => {
   }, []);
   const onClick = () => {
     //fire api
+
     dispatch(setInputStoreVal(inputVal));
     dispatch(fetchMovies());
   };

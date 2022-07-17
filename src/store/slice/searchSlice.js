@@ -18,7 +18,7 @@ export const fetchMovies = createAsyncThunk(
   }
 );
 
-const counterSlice = createSlice({
+const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers: {
@@ -42,5 +42,5 @@ export const selectInputValue = (state) => state.search.value;
 export const searchResult = (state) => state.search.result;
 export const searchPage = (state) => state.search.page;
 
-export const {setInputStoreVal, setPage} = counterSlice.actions;
-export default counterSlice.reducer;
+export const {setInputStoreVal, setPage} = searchSlice.actions;
+export default searchSlice.reducer;
