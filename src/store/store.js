@@ -1,10 +1,10 @@
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import {configureStore} from "@reduxjs/toolkit";
 import search from "./slice/searchSlice";
 import loader from "./slice/loaderSclice";
-const reducer = combineReducers({
-  search,
-  loader,
-});
+//const reducer = combineReducers();
 export const store = configureStore({
-  reducer: reducer,
+  reducer: {
+    search,
+    loader,
+  },
 });
