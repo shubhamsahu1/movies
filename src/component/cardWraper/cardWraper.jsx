@@ -6,12 +6,16 @@ const CardWraper = (props) => {
   const searchData = useSelector(searchResult);
   console.log(searchData);
   return (
-    <div className={styles.container}>
-      {searchData.Search &&
-        searchData.Search.map((e) => {
-          return <MovieCard key={e.imdbID} data={e} />;
-        })}
-    </div>
+    <>
+      {searchData.Search && (
+        <div className={styles.container}>
+          {searchData.Search &&
+            searchData.Search.map((e) => {
+              return <MovieCard key={e.imdbID} data={e} />;
+            })}
+        </div>
+      )}
+    </>
   );
 };
 
