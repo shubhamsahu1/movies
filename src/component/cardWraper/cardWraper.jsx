@@ -16,7 +16,10 @@ const CardWraper = (props) => {
                 return <MovieCard key={e.imdbID} data={e} />;
               })}
           </div>
-          <Pagination currentPage={currentPage} />
+          <Pagination
+            currentPage={currentPage}
+            totalPge={Math.ceil(searchData.totalResults / 10)}
+          />
         </div>
       )}
     </>
