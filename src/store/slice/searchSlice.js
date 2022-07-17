@@ -36,5 +36,8 @@ const counterSlice = createSlice({
   },
 });
 export const selectInputValue = (state) => state.search.value;
+export const searchResult = (state) => state.search.result;
+export const searchPage = (state) => state.search.page;
+
 export const {setInputStoreVal} = counterSlice.actions;
 export default counterSlice.reducer;
