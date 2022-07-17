@@ -37,6 +37,7 @@ const Pagination = ({currentPage, totalPge}) => {
     <div className={styles.container}>
       <Button
         className={styles.buttonClass}
+        disabled={currentPage === 1}
         onClick={() => previous(currentPage)}
       >
         Previous
@@ -46,7 +47,11 @@ const Pagination = ({currentPage, totalPge}) => {
           <PageTile key={page} num={page} selected={currentPage === page} />
         );
       })}
-      <Button className={styles.buttonClass} onClick={() => next(currentPage)}>
+      <Button
+        className={styles.buttonClass}
+        disabled={currentPage === totalPge}
+        onClick={() => next(currentPage)}
+      >
         Next
       </Button>
     </div>
